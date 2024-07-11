@@ -56,7 +56,7 @@ const TopProducts = () => {
   return (
     <div className="flex flex-col gap-y-4">
       <div className="flex justify-between p-4">
-        <p className="text-3xl">Top Products</p>
+        <p className="text-lg lg:text-2xl">Top Products</p>
         <Filter
           products={products}
           onFilter={handleFilter}
@@ -64,9 +64,9 @@ const TopProducts = () => {
         />
         <Link
           href="#"
-          className="flex gap-x-2 text-2xl items-center text-secondary hover:text-primary duration-200"
+          className="flex gap-x-2 text-lg lg:text-2xl items-center text-secondary hover:text-primary duration-200"
         >
-          See all <FaArrowRight />
+          <p className="hidden lg:block md:block">See all</p> <FaArrowRight />
         </Link>
       </div>
       <TopProductsList products={filteredItems} />
