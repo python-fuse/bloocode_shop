@@ -17,16 +17,28 @@ const Footer = () => {
         <div className="flex flex-col gap-y-2">
           <h2 className="text-xl lg:text-2xl font-bold">Get Help</h2>
           <div className="links flex flex-col gap-y-2 text-footlink">
-            <a href="#" className="text-xs lg:text-sm">
+            <a
+              href="#"
+              className="text-xs hover:text-link duration-300 lg:text-sm"
+            >
               Order Status
             </a>
-            <a href="#" className="text-xs lg:text-sm">
+            <a
+              href="#"
+              className="text-xs hover:text-link duration-300 lg:text-sm"
+            >
               Delivery
             </a>
-            <a href="#" className="text-xs lg:text-sm">
+            <a
+              href="#"
+              className="text-xs hover:text-link duration-300 lg:text-sm"
+            >
               Payment Options
             </a>
-            <a href="#" className="text-xs lg:text-sm">
+            <a
+              href="#"
+              className="text-xs  hover:text-link duration-300 lg:text-sm"
+            >
               Contact Us
             </a>
           </div>

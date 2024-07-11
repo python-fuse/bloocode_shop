@@ -11,31 +11,57 @@ import Filter from "./Filter";
 const TopProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredItems, setFilteredItems] = useState<Product[]>([]);
+  const [selectedFilter, setSelectedFilter] = useState<string>("none");
+  const [sortOption, setSortOption] = useState<string>("none");
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchProducts();
       setProducts(response.products);
-      setFilteredItems(response.products); // Initially show all products
+      setFilteredItems(response.products);
     };
     fetchData();
   }, []);
 
-  const handleFilter = (category: string) => {
-    if (category === "none") {
-      setFilteredItems(products);
-    } else {
-      setFilteredItems(
-        products.filter((product: Product) => product.category === category)
+  useEffect(() => {
+    let filteredProducts = [...products];
+
+    if (selectedFilter !== "none") {
+      filteredProducts = products.filter(
+        (product) => product.category === selectedFilter
       );
     }
+
+    if (sortOption === "price-asc") {
+      filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOption === "price-desc") {
+      filteredProducts.sort((a, b) => b.price - a.price);
+    } else if (sortOption === "rating-asc") {
+      filteredProducts.sort((a, b) => a.rating - b.rating);
+    } else if (sortOption === "rating-desc") {
+      filteredProducts.sort((a, b) => b.rating - a.rating);
+    }
+
+    setFilteredItems(filteredProducts);
+  }, [products, selectedFilter, sortOption]);
+
+  const handleFilter = (category: string) => {
+    setSelectedFilter(category);
+  };
+
+  const handleSort = (option: string) => {
+    setSortOption(option);
   };
 
   return (
     <div className="flex flex-col gap-y-4">
       <div className="flex justify-between p-4">
         <p className="text-3xl">Top Products</p>
-        <Filter products={products} onFilter={handleFilter} />
+        <Filter
+          products={products}
+          onFilter={handleFilter}
+          onSort={handleSort}
+        />
         <Link
           href="#"
           className="flex gap-x-2 text-2xl items-center text-secondary hover:text-primary duration-200"
