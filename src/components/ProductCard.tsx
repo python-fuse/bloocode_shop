@@ -14,8 +14,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       className="flex  flex-col justify-between gap-y-2 p-4 border-[3px] border-link rounded-xl hover:shadow-xl duration-300"
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20, scale: 0 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
       <Image

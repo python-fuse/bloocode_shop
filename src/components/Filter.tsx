@@ -40,7 +40,7 @@ const Filter: React.FC<FilterProps> = ({ products, onFilter, onSort }) => {
         onChange={handleSortChange}
       >
         <option value="none">Sort by</option>
-        <option value="pric e-asc">Price: Low to High</option>
+        <option value="price-asc">Price: Low to High</option>
         <option value="price-desc">Price: High to Low</option>
         <option value="rating-asc">Rating: Low to High</option>
         <option value="rating-desc">Rating: High to Low</option>

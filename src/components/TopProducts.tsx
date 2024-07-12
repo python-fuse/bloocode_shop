@@ -24,7 +24,7 @@ const TopProducts = () => {
   }, []);
 
   useEffect(() => {
-    let filteredProducts = [...products];
+    let filteredProducts: Product[] = [...products];
 
     if (selectedFilter !== "none") {
       filteredProducts = products.filter(
