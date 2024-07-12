@@ -19,9 +19,33 @@ const config: Config = {
         "link":"#023047",
         "extra":"#FFB703",
         "gold":"#FB8500"
-      }
+      },
+      transitionProperty: {
+        'transform': 'transform',
+      },
+      transformOrigin: {
+        '0': '0%',
+      },
+      transformStyle: {
+        'preserve-3d': 'preserve-3d',
+      },
+      backfaceVisibility: {
+        'hidden': 'hidden',
+      },
+      rotate: {
+        'y-180': 'rotateY(180deg)',
+      },
     },
   },
+  variants: {
+    extend: {
+      transform: ['group-hover'],
+      rotate: ['group-hover'],
+    },
+  },
+
+  
+  
   plugins: [],
 };
 export default config;

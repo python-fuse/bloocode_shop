@@ -24,7 +24,7 @@ const Filter: React.FC<FilterProps> = ({ products, onFilter, onSort }) => {
   return (
     <div className="flex-col lg:space-x-2 md:space-x-2 md:flex-row lg:flex-row p-2">
       <select
-        className="md:p-2 rounded-md bg-primary text-white text-sm lg:text-md lg:text-md"
+        className="md:p-2 rounded-md bg-primary text-white"
         onChange={handleFilterChange}
       >
         <option value="none">Select a category</option>

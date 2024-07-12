@@ -16,9 +16,13 @@ const TopProducts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetchProducts();
-      setProducts(response.products);
-      setFilteredItems(response.products);
+      try {
+        const response = await fetchProducts();
+        setProducts(response.products);
+        setFilteredItems(response.products);
+      } catch (e) {
+        console.log(e);
+      }
     };
     fetchData();
   }, []);
@@ -69,6 +73,7 @@ const TopProducts = () => {
           <p className="hidden lg:block md:block">See all</p> <FaArrowRight />
         </Link>
       </div>
+
       <TopProductsList products={filteredItems} />
     </div>
   );

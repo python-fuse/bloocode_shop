@@ -3,8 +3,8 @@ import { FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row lg:justify-between border-t-2 border-link px-4 py-2">
-      <div className="flex space-x-5">
+    <footer className="flex flex-col lg:flex-row lg:justify-between border-t-2 border-link px-2 lg:px-10 md:px-10 py-2">
+      <div className="flex w-full justify-between">
         <div className="flex flex-col gap-y-2 w-max">
           <h2 className="text-xl lg:text-2xl font-bold">BlooShop</h2>
           <p className="text-xs lg:text-sm text-footlink">
@@ -56,13 +56,13 @@ const Footer = () => {
             <a href="#" className="text-xs lg:text-sm">
               Track Order
             </a>
+            <div className="right flex space-x-2 lg:items-end pb-2 items-start">
+              <FaInstagram className="text-link" size={30} />
+              <FaTwitter className="text-link" size={30} />
+              <FaEnvelope className="text-link" size={30} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="right flex space-x-2 lg:items-end pb-2 items-start">
-        <FaInstagram className="text-link" size={30} />
-        <FaTwitter className="text-link" size={30} />
-        <FaEnvelope className="text-link" size={30} />
       </div>
     </footer>
   );

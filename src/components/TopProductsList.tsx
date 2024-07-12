@@ -12,7 +12,7 @@ const TopProductsList: React.FC<TopProductsListProps> = ({ products }) => {
   ));
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 p-4 place-content-center gap-4">
-      <Suspense fallback={<p> Loading...</p>}>{items}</Suspense>
+      {items}
     </div>
   );
 };
