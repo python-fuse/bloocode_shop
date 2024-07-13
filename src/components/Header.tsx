@@ -3,6 +3,8 @@ import React from "react";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 const Header = () => {
+  // The header  and Nav bar
+
   return (
     <nav className="flex justify-between items-center p-5 border-b-2">
       <Link href="/">

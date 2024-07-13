@@ -5,6 +5,8 @@ import TopProducts from "@/components/TopProducts";
 import React from "react";
 
 const page = () => {
+  // Main application rendering all our components
+
   return (
     <>
       <Header />

@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FaCartPlus, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+// The product card component with all the animations and fip card effect
+
 interface ProductCardProps {
   product: Product;
 }

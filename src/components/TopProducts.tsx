@@ -8,6 +8,8 @@ import { FaArrowRight } from "react-icons/fa";
 import TopProductsList from "./TopProductsList";
 import Filter from "./Filter";
 
+// All the filter and sort logic defined here, also rendering the top 30 products
+
 const TopProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredItems, setFilteredItems] = useState<Product[]>([]);

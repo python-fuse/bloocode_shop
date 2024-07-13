@@ -3,6 +3,9 @@
 import React from "react";
 import { Product } from "@/lib/definitions";
 
+// The filter and sort Dropdowns
+
+// The props definition for the Filter Component,taking in the products, a function to sort and another to filter
 interface FilterProps {
   products: Product[];
   onFilter: (category: string) => void;
@@ -13,6 +16,7 @@ const Filter: React.FC<FilterProps> = ({ products, onFilter, onSort }) => {
   const allCategories = products.map((product) => product.category);
   const categories = Array.from(new Set(allCategories));
 
+  // Only unique categories
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onFilter(e.target.value);
   };
@@ -28,6 +32,7 @@ const Filter: React.FC<FilterProps> = ({ products, onFilter, onSort }) => {
         onChange={handleFilterChange}
       >
         <option value="none">Select a category</option>
+        {/* Mapped through all the fetched categories and returned an option for it */}
         {categories.map((cat, idx) => (
           <option key={idx} value={cat}>
             {cat.toUpperCase()}

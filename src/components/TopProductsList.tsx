@@ -1,6 +1,8 @@
 import { Product } from "@/lib/definitions";
-import React, { Suspense } from "react";
+import React from "react";
 import ProductCard from "./ProductCard";
+
+// Mapping through the products and returning a product card for each product
 
 interface TopProductsListProps {
   products: Product[];
